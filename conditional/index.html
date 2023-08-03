@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+
+  <body>
+    <p><b> Amount</b></p>
+    <input type="text" id="dauvao" />
+    <p><b>From Currency</b></p>
+    <select name="" id="form">
+      <option value="viet">VNĐ</option>
+      <option value="my">USD</option>
+      <option value="nhat">Yên</option>
+    </select>
+    <p>
+      <b>To Currency</b>
+    </p>
+    <select id="to">
+      <option value="viet">VNĐ</option>
+      <option value="my">USD</option>
+      <option value="nhat">Yên</option>
+    </select>
+    <br />
+    <input type="button" value="Convert" onclick="add()" />
+
+    <p id="main">result: <span id="result"></span></p>
+  </body>
+  <script src="script.js"></script>
+</html>
