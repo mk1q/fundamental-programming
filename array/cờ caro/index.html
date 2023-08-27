@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tic Tac Toe</title>
+</head>
+<body>
+<div id="board">
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+</div>
+<script>
+// This function is called when the user clicks on a cell.
+function clickHandler(event) {
+// Get the cell that was clicked.
+var cell = event.target;
+// Set the cell's text to the current player's symbol.
+cell.textContent = playerSymbol;
+// Check if the game is over.
+if (checkGameOver()) {
+// The game is over, so display the winner.
+displayWinner();
+} else {
+// The game is not over, so switch players.
+switchPlayers();
+}
+}
+// This function checks if the game is over.
+function checkGameOver() {
+// Check if there is a winner in any of the rows.
+for (var i = 0; i < 3; i++) {
+if (board[i][0].textContent === board[i][1].textContent && board[i][1].textContent === board[i][2].textContent && board[i][0].textContent !== '') {
+return board[i][0].textContent;
+}
+}
+// Check if there is a winner in any of the columns.
+for (var i = 0; i < 3; i++) {
+if (board[0][i].textContent === board[1][i].textContent && board[1][i].textContent === board[2][i].textContent && board[0][i].textContent !== '') {
+return board[0][i].textContent;
+}
+}
+// Check if there is a winner in the diagonals.
+if (board[0][0].textContent === board[1][1].textContent && board[1][1].textContent === board[2][2].textContent && board[0][0].textContent !== '') {
+return board[0][0].textContent;
+}
+if (board[0][2].textContent === board[1][1].textContent && board[1][1].textContent === board[2][0].textContent && board[0][2].textContent !== '') {
+return board[0][2].textContent;
+}
+// The game is not over.
+return null;
+}
+// This function displays the winner.
+function displayWinner() {
+// Get the winner's symbol.
+var winner = checkGameOver();
+// Display the winner's symbol in the center of the board.
+document.getElementById("winner").textContent = winner;
+}
+// This function switches players.
+function switchPlayers() {
+// If the current player is X, then the next player is O.
+// Otherwise, the next player is X.
+playerSymbol = (playerSymbol === "X") ? "O" : "X";
+}
+// This function initializes the game.
+function initGame() {
+// Set the current player to X.
+playerSymbol = "X";
+// Clear the board.
+for (var i = 0; i < 9; i++) {
+board[i / 3][i % 3].textContent = "";
+}
+}
+// This function is called when the page loads.
+window.onload = initGame;
+</script>
+</body>
+</html>
