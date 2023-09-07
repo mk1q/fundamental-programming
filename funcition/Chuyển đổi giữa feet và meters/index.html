@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form >
+<table border="1px dashed red" >   
+    <tr>
+        <th>Meters: </th>
+        <td>   
+            <input id="inputMeter" type="number" placeholder="Meter"
+            oninput="meterToFoot(this.value)"
+            onchange="meterToFoot(this.value)">
+        </td>
+    </tr>
+</table>
+<th style="border: 2px solid black;" >  <p> Feet: <span id="outputFeet"></span>   </p>  </th>
+</form>
+
+
+<form>
+    <table border="2px dashed blue" > 
+        
+            <th >Feet: </th>
+            <td>
+            <input id="inputFeet" type="number" placeholder="Feet"
+                oninput="feetToMeters(this.value)"
+                onchange="feetToMeters(this.value)">
+            </td>
+            </table>
+          <th>  <p> Meters: <span id="outputMeters"></span>  </p>  </th>  
+       
+</form>
+</body>
+
+<script src="script.js" ></script>
+
+</html>
