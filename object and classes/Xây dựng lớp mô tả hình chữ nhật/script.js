@@ -13,7 +13,7 @@ class Rectangle {
       this.height = height;
     }
   
-    getArea = () =>  {
+    getArea = () =>  {                           //arrow function
       return this.width * this.height;
     }
   
@@ -31,6 +31,6 @@ class Rectangle {
 
      function main() {
 
-      Rectangle.showInfo(rect1);
+      Rectangle.showInfor(rect1);
 
      }

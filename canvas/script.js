@@ -12,9 +12,9 @@ let gameLeftPosition = 0;
 let gameRightPosition =750;
 let timeLoop = 10;
 
-// add xDistance
-let xDistance = 1;
-let yDistance = 1;
+// add xDistance,tăng speed
+let xDistance = 5;
+let yDistance = 5;
 function drawCar() {
   gameContext.beginPath();
   gameContext.fillStyle = "#fa4b2a";
@@ -41,16 +41,6 @@ if (isTouchLeft || isTouchRight) {
   
   // update the car's position
   carYPosition -= yDistance;
-  carXPosition -= xDistance;
-  carXPosition -= xDistance;
-  carYPosition -= yDistance;
-  carXPosition -= xDistance;
-  carXPosition -= xDistance;
-  carYPosition -= yDistance;
-  carXPosition -= xDistance;
-  carXPosition -= xDistance;
-  carYPosition -= yDistance;
-  carXPosition -= xDistance;
   carXPosition -= xDistance;
 
   // draw the car at the new position
